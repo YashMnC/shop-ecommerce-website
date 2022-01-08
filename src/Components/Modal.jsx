@@ -31,7 +31,7 @@ class Modal extends React.Component {
                       <h5 className="text-muted">price: $ {price}</h5>
                       <Link to="/">
                         <ButtonContainer onClick={() => closeModal()}>
-                          store
+                          Buy more items
                         </ButtonContainer>
                       </Link>
                       <Link to="/cart">
@@ -65,5 +65,8 @@ const ModalContainer = styled.div`
   justify-content: center;
   #modal {
     background: var(--mainWhite);
+  }
+  @media screen and (min-width: 1400px) {
+    z-index: 100000001;
   }
 `;

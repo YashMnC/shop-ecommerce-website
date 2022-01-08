@@ -112,7 +112,7 @@ function Signup() {
               </Form>
             </Card.Body>
           </Card>
-          <p>
+          <p className="justify-content-center m-2">
             Already have an account?{" "}
             <ButtonContainer smallSize onClick={handleClickLogin}>
               Log In

@@ -60,9 +60,9 @@ function Login() {
   };
 
   return (
-    <div className="container m-4 justify-content-center">
+    <div className="container m-4 justify-content-center" id="loginContainer">
       <div className="row">
-        <div className="col-3"></div>
+        <div className="col-lg-3"></div>
         <div className="col-lg-5">
           <Card style={{ width: "30rem", height: "30rem" }} id="loginCard">
             <Card.Body>
@@ -130,14 +130,14 @@ function Login() {
               </Form>
             </Card.Body>
           </Card>
-          <p>
+          <p className="justify-content-center m-2">
             To create a new account{" "}
             <ButtonContainer smallSize onClick={handleClickSignupButton}>
               Sign Up{" "}
             </ButtonContainer>
           </p>
         </div>
-        <div className="col-3"></div>
+        <div className="col-lg-3"></div>
       </div>
     </div>
   );

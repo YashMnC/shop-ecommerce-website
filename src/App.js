@@ -13,6 +13,7 @@ import Login from "./Components/Login";
 import PrivateRoute from "./Components/PrivateRoute";
 import ForgotPassword from "./Components/ForgotPassword";
 import UpdateProfile from "./Components/UpdateProfile";
+import NonPrivateRoute from "./Components/NonPrivateRoute";
 
 class App extends React.Component {
   render() {
@@ -22,10 +23,10 @@ class App extends React.Component {
           <PrivateRoute path="/" component={Navbar} />
           <Route component={Default} />
         </Switch>
-        <Route exact path="/login" component={Login} />
+        <NonPrivateRoute exact path="/login" component={Login} />
         <PrivateRoute path="/update-profile" component={UpdateProfile} />
-        <Route path="/forgot-password" component={ForgotPassword} />
-        <Route path="/signup" component={Signup} />
+        <NonPrivateRoute path="/forgot-password" component={ForgotPassword} />
+        <NonPrivateRoute path="/signup" component={Signup} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/" component={ProductList} />
         <PrivateRoute path="/cart" component={Cart} />

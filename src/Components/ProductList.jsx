@@ -4,12 +4,15 @@ import Title from "./Title";
 import { ProductConsumer } from "../context";
 
 class ProductList extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <React.Fragment>
-        <div className="py-5">
+        <div className="py-5 mt-4">
           <div className="container">
-            <Title name="our" title="products" />
+            <Title name="buy" title="products" />
             <div className="row">
               <ProductConsumer>
                 {(value) => {

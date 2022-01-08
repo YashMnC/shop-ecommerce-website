@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 // import { ProductConsumer } from "../context";
 import PropTypes from "prop-types";
+import { ButtonContainer } from "./ButtonContainer";
 
 class Product extends React.Component {
   render() {
@@ -17,8 +18,14 @@ class Product extends React.Component {
             <Link to="/details">
               <img src={img} alt="product image" className="card-img-top" />
             </Link>
-            <button
-              className="add-to-cart"
+          </div>
+
+          <div className="container">
+            <ButtonContainer
+              smallSize
+              cartProp
+              className="card-body btn btn-sm"
+              id={inCart ? "inCart" : "add-to-cart"}
               disabled={inCart ? true : false}
               onClick={() => {
                 this.props.addToCart(id);
@@ -26,15 +33,12 @@ class Product extends React.Component {
               }}
             >
               {inCart ? (
-                <p className="text-capitalize mb-0" disabled>
-                  In Cart
-                </p>
+                <p className="text-capitalize mb-0">Item In Cart</p>
               ) : (
-                <i className="fas fa-cart-plus mb-0" />
+                <p className="text-capitalize mb-0">Add to Cart</p>
               )}
-            </button>
+            </ButtonContainer>
           </div>
-
           {/* card footer */}
           <div className="card-footer d-flex justify-content-between">
             <p className="align-self-center mb-0">{title}</p>
@@ -62,23 +66,30 @@ Product.propTypes = {
 const ProductWrapper = styled.div`
   .card {
     border-color: transparent;
-    transition: all 1s linear;
+    // transition: all 1s linear;
+    background: var(--lightGrey);
+    border: 0.04rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .card:hover {
   }
 
   .card-footer {
     background-color: transparent;
     border-top: transparent;
-    transition: all 1s linear;
-  }
-
-  .card:hover {
-    border: 0.04rem solid rgba(0, 0, 0, 0.2);
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
-  }
-
-  .card-footer:hover {
+    // transition: all 1s linear;
     background: rgba(247, 247, 247);
   }
+
+  // .card:hover {
+  //   border: 0.04rem solid rgba(0, 0, 0, 0.2);
+  //   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+  // }
+
+  // .card-footer:hover {
+  //   background: rgba(247, 247, 247);
+  // }
 
   .img-container {
     position: relative;
@@ -93,27 +104,25 @@ const ProductWrapper = styled.div`
     transform: scale(1.2);
   }
 
-  .add-to-cart {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 0.2rem 0.4rem;
-    background-color: var(--lightBlue);
-    color: var(--mainWhite);
-    border: none;
-    border-radius: 0.5rem 0 0 0;
-    font-size: 1.4rem;
-    transform: translate(100%, 100%);
-    transition: all 1s linear;
+  #add-to-cart {
+    opacity: 0;
   }
 
-  .img-container:hover .add-to-cart {
-    transform: translate(0, 0);
+  .card:hover #add-to-cart {
+    opacity: 1 !important;
   }
 
-  .add-to-cart:hover {
-    color: var(--mainBlue);
-    cursor: pointer;
+  // #add-to-cart:hover {
+  //   background: var(--mainYellow);
+  //   color: var(--mainBlue);
+  //   cursor: pointer;
+  // }
+
+  #inCart {
+    opacity: 1;
+  }
+
+  #inCart:hover {
   }
 `;
 

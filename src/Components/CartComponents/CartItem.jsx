@@ -37,7 +37,7 @@ class CartItem extends React.Component {
           </div>
         </div>
 
-        <div className="col-10 mx-auto col-lg-2">
+        <div className="col-10 mx-auto col-lg-2 mt-sm-2">
           <div
             className="cart-icon"
             onClick={() => {
@@ -48,7 +48,7 @@ class CartItem extends React.Component {
           </div>
         </div>
 
-        <div className="col-10 mx-auto col-lg-2">
+        <div className="col-10 mx-auto col-lg-2 mt-sm-2">
           <strong> item total : $ {total}</strong>
         </div>
       </div>

@@ -18,7 +18,8 @@ export default function Dashboard() {
       setError("");
       await logout();
 
-      history.push("/login");
+      setTimeout(() => history.push("/login"), 2000);
+
       window.location.reload(false);
     } catch (error) {
       setError("Failed to log out");
@@ -35,11 +36,11 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="container m-4 justify-content-center text-align-center ">
+    <div className="container m-4 justify-content-center text-align-center">
       <div className="row">
         <div className="col-3"></div>
-        <div className="col-lg-5">
-          <Card style={{ width: "30rem", height: "20rem" }} id="">
+        <div className="col-lg-5" id="dashboardContainer">
+          <Card style={{ width: "30rem", height: "24rem" }} id="dashboard">
             <Card.Body>
               {!isCurrentUserGuest && <Title name="Profile" title="" />}
               {isCurrentUserGuest && <Title name="Welcome" title="Guest!" />}
@@ -63,7 +64,7 @@ export default function Dashboard() {
                 </ButtonContainer>
               )}
             </Card.Body>
-            <p>
+            <p className="m-4">
               <ButtonContainer
                 className="w-50 position-absolute top-65 start-50 translate-middle"
                 smallSize
