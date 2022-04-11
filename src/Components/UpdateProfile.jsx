@@ -20,7 +20,7 @@ function UpdateProfile() {
 
   async function handleUpdateEmail(e) {
     e.preventDefault();
-    if (emailRef.current.value == currentUser.email) {
+    if (emailRef.current.value === currentUser.email) {
       return setErrorEmail(emailRef.current.value + " is already registered.");
     }
     try {
