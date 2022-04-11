@@ -2,7 +2,7 @@
 
 ### An ecommerce website built using react.
 
-### Used firebase for user authetication and 
+### Used firebase for user authentication and 
 
 ### react-paypal-express-checkout for processing payments. 
 
